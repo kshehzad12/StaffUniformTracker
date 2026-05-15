@@ -24,7 +24,7 @@ public partial class MainForm : Form
         _menuReport.Click += (_, _) => Open<ReportsForm>();
         _menuAudit.Click += (_, _) => Open<AuditLogForm>();
         _menuAbout.Click += (_, _) => MessageBox.Show(this,
-            "StaffUniformTracker - SWE7302 demo.", "About");
+            "Staff Uniform Tracker - SWE7302_A2_1410218_Muhammad Khurram Shehzad.", "About");
 
         var app = UniformTrackingApp.Instance;
         _welcome.Text = $"Welcome, {app.CurrentUser ?? "user"}.";
