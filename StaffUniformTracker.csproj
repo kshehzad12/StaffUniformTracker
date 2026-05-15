@@ -17,9 +17,6 @@
     <Folder Include="Data\" />
     <Folder Include="Forms\" />
     <Folder Include="Repositories\" />
-    <Folder Include="Patterns\Factory\" />
-    <Folder Include="Patterns\Adapter\" />
-    <Folder Include="Patterns\Observer\" />
   </ItemGroup>
 
 </Project>
