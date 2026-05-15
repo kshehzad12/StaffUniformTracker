@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StaffUniformTracker.Patterns.Observer
-{
-    public interface IAuditObserver { void Update(AuditEvent evt); }
-}
+namespace StaffUniformTracker.Patterns.Observer;
+
+public interface IAuditObserver { void Update(AuditEvent evt); }

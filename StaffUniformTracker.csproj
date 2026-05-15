@@ -13,10 +13,4 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.10" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Forms\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>
