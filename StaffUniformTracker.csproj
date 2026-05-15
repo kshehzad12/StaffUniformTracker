@@ -16,7 +16,6 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Forms\" />
-    <Folder Include="Models\States\" />
     <Folder Include="Repositories\" />
     <Folder Include="Patterns\Factory\" />
     <Folder Include="Patterns\Adapter\" />
