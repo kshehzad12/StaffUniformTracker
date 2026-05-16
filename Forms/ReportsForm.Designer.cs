@@ -36,6 +36,7 @@
             _lblTo = new Label();
             _genBtn = new Button();
             _output = new TextBox();
+            _saveBtn = new Button();
             SuspendLayout();
             // 
             // _lblClient
@@ -108,14 +109,24 @@
             _output.Multiline = true;
             _output.Name = "_output";
             _output.ReadOnly = true;
-            _output.Size = new Size(702, 381);
+            _output.Size = new Size(791, 381);
             _output.TabIndex = 7;
+            // 
+            // _saveBtn
+            // 
+            _saveBtn.Location = new Point(704, 12);
+            _saveBtn.Name = "_saveBtn";
+            _saveBtn.Size = new Size(75, 23);
+            _saveBtn.TabIndex = 8;
+            _saveBtn.Text = "Save As .txt";
+            _saveBtn.UseVisualStyleBackColor = true;
             // 
             // ReportsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(702, 450);
+            ClientSize = new Size(791, 450);
+            Controls.Add(_saveBtn);
             Controls.Add(_output);
             Controls.Add(_genBtn);
             Controls.Add(_to);
@@ -140,5 +151,6 @@
         private Label _lblTo;
         private Button _genBtn;
         private TextBox _output;
+        private Button _saveBtn;
     }
 }
