@@ -48,6 +48,7 @@
             // _success
             // 
             _success.AutoSize = true;
+            _success.Checked = true;
             _success.Location = new Point(21, 67);
             _success.Name = "_success";
             _success.Size = new Size(166, 19);
@@ -63,7 +64,6 @@
             _failure.Name = "_failure";
             _failure.Size = new Size(150, 19);
             _failure.TabIndex = 2;
-            _failure.TabStop = true;
             _failure.Text = "Wash Failed (Re-queue)";
             _failure.UseVisualStyleBackColor = true;
             // 
@@ -80,11 +80,10 @@
             // 
             _items.Dock = DockStyle.Bottom;
             _items.FormattingEnabled = true;
-            _items.IntegralHeight = false;
             _items.Location = new Point(0, 158);
             _items.Name = "_items";
             _items.Size = new Size(397, 292);
-            _items.TabIndex = 4;
+            _items.TabIndex = 0;
             // 
             // BatchWashForm
             // 

@@ -54,4 +54,6 @@ public abstract class Uniform
     public void MarkSoiled() => State.MarkSoiled(this);
     public void MarkWashing() => State.MarkWashing(this);
     public void MarkCleaned() => State.MarkCleaned(this);
+
+    public override string ToString() => $"{Id} {TypeName} (state={State.Name}, washes={WashCount})";
 }
