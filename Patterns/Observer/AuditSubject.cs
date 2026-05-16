@@ -8,17 +8,50 @@ namespace StaffUniformTracker.Patterns.Observer;
 
 public sealed class AuditSubject
 {
-    private static readonly object _lock = new();
-    private static AuditSubject? _i;
+    private static readonly object _instLock = new();
+    private static AuditSubject? _instance;
+
+    // Global access point - the canonical Singleton entry
     public static AuditSubject Instance
     {
-        get { lock (_lock) { _i ??= new AuditSubject(); return _i; } }
+        get
+        {
+            lock (_instLock)
+            {
+                _instance ??= new AuditSubject();
+                return _instance;
+            }
+        }
     }
+
     private readonly List<IAuditObserver> _observers = new();
-    public void Attach(IAuditObserver o) { if (!_observers.Contains(o)) _observers.Add(o); }
-    public void Detach(IAuditObserver o) => _observers.Remove(o);
+    private readonly object _observersLock = new();
+
+    public void Attach(IAuditObserver o)
+    {
+        lock (_observersLock)
+        {
+            if (!_observers.Contains(o)) _observers.Add(o);
+        }
+    }
+
+    public void Detach(IAuditObserver o)
+    {
+        lock (_observersLock)
+        {
+            _observers.Remove(o);
+        }
+    }
     public void Notify(AuditEvent evt)
     {
-        foreach (var o in _observers.ToArray()) o.Update(evt);
+        IAuditObserver[] snapshot;
+        lock (_observersLock)
+        {
+            snapshot = _observers.ToArray();
+        }
+        foreach (var o in snapshot)
+        {
+            o.Update(evt);
+        }
     }
 }
